@@ -57,3 +57,5 @@ set pastetoggle=<F10>   " toggle paste with F10
 autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 
 set shellcmdflag=-ic   " make vim shell interactive
+
+set clipboard=unnamed
