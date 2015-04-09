@@ -59,3 +59,9 @@ autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 set shellcmdflag=-ic   " make vim shell interactive
 
 set clipboard=unnamed
+
+"speeds up ctrlp finder by ignoring certain files
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
