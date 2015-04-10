@@ -38,14 +38,14 @@ set noswapfile          " no create swap files
 set ignorecase
 set smartcase
 set ls=2
-nmap <silent> <C-G> :NERDTreeToggle<CR> 
+nmap <silent> <C-G> :NERDTreeToggle<CR>
 nmap <C-S> :w<CR>
 imap <c-s> <Esc>:w<CR>
 nmap Q :q <enter><CR>
 " insert chracter in cursor
 
 " for switching buffers
-map <C-J> <C-W>j<C-W>_   
+map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
@@ -65,3 +65,5 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
+
+nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
