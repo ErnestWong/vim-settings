@@ -17,3 +17,7 @@ PATH=$PATH:/usr/local/sbin
 
 bind -r '\C-s'
 stty -ixon
+
+export PATH="$PATH:/Applications/Muse"
+
+export DYLD_FALLBACK_LIBRARY_PATH="$DYLD_FALLBACK_LIBRARY_PATH:/Applications/Muse"
