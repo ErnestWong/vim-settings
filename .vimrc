@@ -9,6 +9,7 @@ Bundle 'git://github.com/tpope/vim-surround.git'
 Bundle 'tpope/vim-rails'
 Bundle 'bkad/CamelCaseMotion'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'https://github.com/scrooloose/syntastic'
 call vundle#end()
 Bundle 'slim-template/vim-slim.git'
 
@@ -67,3 +68,13 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" syntastic recommended settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
