@@ -38,28 +38,34 @@ set hlsearch            " highlight search results
 set noswapfile          " no create swap files
 set ignorecase
 set smartcase
-set ls=2
+set laststatus=2
 nmap <silent> <C-G> :NERDTreeToggle<CR>
 nmap <C-S> :w<CR>
 imap <c-s> <Esc>:w<CR>
 nmap Q :q <enter><CR>
 " insert chracter in cursor
 
+" search for occurrences of highlighted text
+vnoremap // y/<C-R>"<CR>
+
+"fxi arrow keys in insert mode bug
+
 " for switching buffers
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <C-H> <C-W>h<C-W>_
-map <C-L> <C-W>l<C-W>_
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
 
 nmap <C-P> :CtrlP <CR>
 nmap <C-T> :vsplit <CR>
+nmap <C-Y> <C-W>s
 set pastetoggle=<F10>   " toggle paste with F10
 
 autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 
 set shellcmdflag=-ic   " make vim shell interactive
 
-set clipboard=unnamed
+set clipboard=unnamed    "share clipboard
 
 "speeds up ctrlp finder by ignoring certain files
 let g:ctrlp_custom_ignore = {
@@ -67,14 +73,40 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
 
+" delete extra whitespace F6
 nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-" syntastic recommended settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" syntastic recommended settings--COMMENTED OUT BECAUSE MESSED UP STATUSLINE
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" syntax checking default off
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>e :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
+"closetag.vim settings
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
+
+
+
+
+
+
+
+" easymotion mappings
+
+" Bi-directional find motion
+nmap f <Plug>(easymotion-bd-w)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
