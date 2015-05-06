@@ -19,7 +19,6 @@ syntax enable
 filetype plugin indent on
 
 execute pathogen#infect()
-set term=xterm-256color
 set tabstop=2
 set expandtab
 set backspace=2         " backspace in insert mode works like normal editor
@@ -29,7 +28,6 @@ filetype indent on      " activates indenting for files
 set autoindent          " auto indenting
 set smartindent
 set number              " line numbers
-colorscheme railscasts
 set autoread
 au CursorHold * checktime
 set incsearch           " search as you type
@@ -43,7 +41,10 @@ nmap <silent> <C-G> :NERDTreeToggle<CR>
 nmap <C-S> :w<CR>
 imap <c-s> <Esc>:w<CR>
 nmap Q :q <enter><CR>
-" insert chracter in cursor
+
+" scroll up/down page
+nmap D <C-D>
+nmap U <C-U>
 
 " search for occurrences of highlighted text
 vnoremap // y/<C-R>"<CR>
@@ -93,12 +94,6 @@ nnoremap <C-w>e :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 "closetag.vim settings
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
 
-
-
-
-
-
-
 " easymotion mappings
 
 " Bi-directional find motion
@@ -110,3 +105,29 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+
+"settings for relative/absolute line number
+autocmd InsertEnter * :call TurnOffRelative()  " turn off relative in insert mode
+
+" toggle relative
+nnoremap <C-n> :set relativenumber!<cr>     
+
+
+
+function! TurnOffRelative()
+  if(&relativenumber == 1)
+    set relativenumber!
+  endif
+endfunc
+
+"folding settings
+"set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+" set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
+" Solarized stuff
+let g:solarized_termtrans = 1
+set background=dark
+colorscheme solarized

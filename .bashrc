@@ -20,3 +20,9 @@ alias vim='mvim -v'
 export PATH="$PATH:/Applications/Muse"
 
 export DYLD_FALLBACK_LIBRARY_PATH="$DYLD_FALLBACK_LIBRARY_PATH:/Applications/Muse"
+
+alias fuck='$(thefuck $(fc -ln -1))'
+alias connectd='cd /Users/ernestwong/Documents/Code/Github/Connectd'
+alias ece254='cd ~/Documents/School/2B/ECE254'
+alias boltmade='cd ~/Documents/Code/Boltmade'
+alias website='cd ~/Documents/Code/Github/Ernestwong.github.io'
