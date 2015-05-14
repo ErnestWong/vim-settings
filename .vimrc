@@ -2,14 +2,18 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
 Plugin 'git@github.com:ervandew/supertab.git'
 Bundle 'git@github.com:kien/ctrlp.vim.git'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'git://github.com/tpope/vim-surround.git'
 Bundle 'tpope/vim-rails'
 Bundle 'bkad/CamelCaseMotion'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'https://github.com/scrooloose/syntastic'
+Bundle 'digitaltoad/vim-jade'
+
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 Bundle 'slim-template/vim-slim.git'
 
@@ -108,7 +112,7 @@ map <Leader>k <Plug>(easymotion-k)
 
 
 "settings for relative/absolute line number
-autocmd InsertEnter * :call TurnOffRelative()  " turn off relative in insert mode
+"autocmd InsertEnter * :call TurnOffRelative()  " turn off relative in insert mode
 
 " toggle relative
 nnoremap <C-n> :set relativenumber!<cr>     
