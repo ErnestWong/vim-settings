@@ -12,6 +12,9 @@ Bundle 'tpope/vim-rails'
 Bundle 'bkad/CamelCaseMotion'
 Bundle 'https://github.com/scrooloose/syntastic'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'https://github.com/majutsushi/tagbar'
+Bundle 'https://github.com/marijnh/tern_for_vim'
+Bundle 'https://github.com/tpope/vim-fugitive'
 
 Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
@@ -23,10 +26,10 @@ syntax enable
 filetype plugin indent on
 
 execute pathogen#infect()
-set tabstop=2
+set tabstop=4
 set expandtab
 set backspace=2         " backspace in insert mode works like normal editor
-set shiftwidth=2
+set shiftwidth=4
 syntax on               " syntax highlighting
 filetype indent on      " activates indenting for files
 set autoindent          " auto indenting
@@ -135,3 +138,19 @@ set foldlevel=1         "this is just what i use
 let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
+
+
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-i> :nohl<CR><C-i>
+
+
+" for jasmine
+au BufNewFile,BufRead *.ejs set filetype=html
+
+
+"tagbar default
+nmap <F8> :TagbarToggle<CR>
+
+map <C-f> :!git grep -i 
+
+imap jk <Esc>

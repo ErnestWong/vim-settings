@@ -1,3 +1,4 @@
+#!/bin/bash
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 ### Added by the Heroku Toolbelt
@@ -30,3 +31,11 @@ alias website='cd ~/Documents/Code/Github/Ernestwong.github.io'
 alias android='cd /Users/ernestwong/AndroidStudioProjects/SideKick'
 alias sudoku='cd /Users/ernestwong/AndroidStudioProjects/SideKick/SudokuSolver1'
 alias github='cd ~/Documents/Code/Github'
+
+
+
+
+alias inkling='cd ~/sparse-inkling.sparsebundle/Github'
+alias webclient='cd ~/sparse-inkling.sparsebundle/Github/web-client'
+alias vwebclient='cd ~/sparse-inkling.sparsebundle/Github/web-client && vim'
+

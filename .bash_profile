@@ -13,6 +13,7 @@ fi
 PATH=$PATH:/usr/local/sbin
 
 . ~/.profile
+. ~/.bashrc
 
 
 bind -r '\C-s'
@@ -26,3 +27,8 @@ export PATH="$PATH:/Users/ernestwong/Library/Android/sdk/platform-tools"
 #export PATH="$PATH:/Users/ernestwong/Library/Android/sdk/tools:Users/ernestwong/Library/Android/sdk/platform-tools"
 export ANDROID_NDK="/Users/ernestwong/Library/Android/android-ndk-r10d"
 export PATH="$PATH:$ANDROID_NDK"
+
+
+
+export INKLING_INKWELL_PATH=/Users/ernest/sparse-inkling.sparsebundle/Github/inkwell
+eval $(thefuck --alias)
