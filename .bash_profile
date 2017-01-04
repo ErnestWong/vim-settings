@@ -21,3 +21,8 @@ stty -ixon
 export PATH="$PATH:/Applications/Muse"
 
 export DYLD_FALLBACK_LIBRARY_PATH="$DYLD_FALLBACK_LIBRARY_PATH:/Applications/Muse"
+
+export PATH="$PATH:/Users/ernestwong/Library/Android/sdk/platform-tools"
+#export PATH="$PATH:/Users/ernestwong/Library/Android/sdk/tools:Users/ernestwong/Library/Android/sdk/platform-tools"
+export ANDROID_NDK="/Users/ernestwong/Library/Android/android-ndk-r10d"
+export PATH="$PATH:$ANDROID_NDK"
